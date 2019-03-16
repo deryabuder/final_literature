@@ -1,0 +1,99 @@
+<!--pages/book-detail/book-detail.wxml-->
+<view class="book-detail">
+  <view class="book-detail-header">
+    <view>
+      <image class="book-detail-image" src="{{bookDetail.image}}"></image>
+    </view>
+    <view class="book-detail-name">
+      <text>{{bookDetail.title}}</text>
+    </view>
+    <view class="book-detail-author">
+      <text>{{bookDetail.author}}</text>
+    </view>
+  </view>
+  <view class="book-detail-brief section">
+    <view class="title">
+      <text>短评</text>
+    </view>
+    <view class="brief-content clearfix">
+      <text class="brief-item" wx:for="{{util.limit(comments, 15)}}" wx:key="{{index}}" wx:if="{{comments.length>0}}">
+        <text class="brief-item-content">{{item.content}}</text>
+        <text class="brief-item-count">+{{item.nums}}</text>
+      </text>
+      <view class="no-brief-item" wx:if="{{comments.length===0}}"><text>还没有短评</text></view>
+    </view>
+  </view>
+  <view class="book-detail-introduction section">
+    <view class="title">
+      <text>内容介绍</text>
+    </view>
+    <view class="introduction-content">
+      <!-- 动态获取数据，\n无法实现换行，解决方法: 1.将\n替换成<br>。2. 在数据库中的\n取出时会变成\\n,因此需要data = data.replace('/\n/g', 'n')-->
+      <text decode="{{true}}">{{util.format(summary)}}</text>
+    </view>
+  </view>
+
+  <view class="book-detail-info section">
+    <view class="title">
+      <text>书本信息</text>
+    </view>
+    <view>
+      <view class="info-content">
+        <text class="info-content-left">出版社</text>
+        <text class="info-content-right">{{bookDetail.publisher}}</text>
+      </view>
+      <view class="info-content">
+        <text class="info-content-left">出版年</text>
+        <text class="info-content-right">{{bookDetail.pubdate}}</text>
+      </view>
+      <view class="info-content">
+        <text class="info-content-left">页数</text>
+        <text class="info-content-right">{{bookDetail.pages}}</text>
+      </view>
+      <view class="info-content">
+        <text class="info-content-left">定价</text>
+        <text class="info-content-right">{{bookDetail.price}}</text>
+      </view>
+      <view class="info-content">
+        <text class="info-content-left">装帧</text>
+        <text class="info-content-right">{{bookDetail.binding}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="input-comment" wx:if="{{!isFocus}}">
+  <input placeholder='短评：仅做展示，不能输入' bindfocus="onFocus"></input>
+  <view class="comment-right">
+    <cmp-heart bindlike="onLike" isLike="{{favor.like_status}}" count="{{favor.fav_nums}}"></cmp-heart>
+    <cmp-repeat></cmp-repeat>
+  </view>
+</view>
+<view class="comment-label-container" wx:if="{{isFocus}}">
+  <view class="comment-label">
+    <view class="comment-label-header">
+      <text class="title-left" wx:if="{{comments.length!==0}}">仅可点击标签+1</text>
+      <text class="title-left" wx:if="{{comments.length===0}}">暂无标签</text>
+      <text class="title-right" bindtap='onCancel'>取消</text>
+    </view>
+    <view class="comment-label-content">
+      <text class="brief-item" wx:for="{{util.limit(comments, 3)}}" wx:key="{{index}}" wx:if="{{comments.length>0}}" bindtap="onAddComment" data-content="{{item.content}}">
+        <text class="brief-item-content">{{item.content}}</text>
+        <text class="brief-item-count">+{{item.nums}}</text>
+      </text>
+      <input focus="{{posting}}" confirm-type="发送" class="post" placeholder='短评最多12个字' bindconfirm="onAddComment"></input>
+    </view>
+  </view>
+</view>
+
+<!-- <wxs module="util">
+  var format = function(text) {
+    if(!text) {
+      return
+    }
+    var reg = getRegExp('\\\\n','g')
+    var text = text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+    return text
+  }
+  module.exports.format = format
+</wxs> -->
+<wxs src="../../utils/filter.wxs" module="util"></wxs>

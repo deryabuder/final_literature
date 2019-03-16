@@ -1,0 +1,36 @@
+<!--pages/my/my.wxml-->
+<view class="my-container">
+  <view class="my-info">
+    <image class="my-bg" src="/images/my/my@bg.png"></image>
+    <image class="my-study" src="/images/my/study.png" bindtap="onToCourse"></image>
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="button">获取头像昵称</button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="my-about" bindtap='onToAbout'>
+      <image class="about" src="/images/my/about.png"></image>
+      <view>
+        <text>关于我们</text>
+      </view>
+    </view>
+    <view class="my-like">
+      <view class="my-like-count">
+        <text>259</text>
+      </view>
+      <view>
+        <text>喜欢的书</text>
+      </view>
+    </view>
+  </view>
+  <view class="like-list-title">
+    <image class="img" src="/images/my/like.png"></image>
+  </view>
+  <view class="my-like-list">
+    <view wx:for="{{favor}}" wx:key="favor.id" class="cmp-like-item">
+      <cmp-like-item bindtap="onToDetail" favorItem="{{item}}"></cmp-like-item>
+    </view>
+  </view>
+</view>

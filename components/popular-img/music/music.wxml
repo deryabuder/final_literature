@@ -1,0 +1,11 @@
+<!--components/popular-img/music/music.wxml-->
+<view class="popular-img-wrapper">
+  <!-- 三元表达式切换class -->
+  <image class="popular-img {{playing ? 'start' : ''}}" src="{{currentItem.image}}" animation="{{musicAnimation}}"></image>
+  <image wx:if="{{!playing}}" class="playing" src="{{waitSrc}}" bindtap="onPlay"></image>
+  <image wx:if="{{playing}}" class="waitting" src="{{playSrc}}" bindtap="onPause"></image>
+</view>
+<image class="popular-type" src="./images/music@tag.png"></image>
+<view class="popular-sentence">
+  <text>{{currentItem.content}}</text>
+</view>

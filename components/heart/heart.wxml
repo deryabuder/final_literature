@@ -1,0 +1,5 @@
+<!--components/heart/heart.wxml-->
+<view class="heart-container">
+  <image class="heart" src="{{isLike =='1' ? likeSrc: disLikeSrc}}" bindtap='onChangeLike'></image>
+  <text class="count">{{count}}</text>
+</view>

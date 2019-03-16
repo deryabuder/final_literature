@@ -1,0 +1,13 @@
+/* components/heart/heart.wxss */
+.heart-container {
+  display: inline-flex;
+  font-size: 14px;
+}
+.heart-container .heart {
+  width: 32rpx;
+  height: 28rpx;
+}
+.heart-container .count {
+  margin-top: -14rpx;
+  margin-left: 4rpx;
+}

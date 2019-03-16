@@ -1,0 +1,5 @@
+/* components/repeat/repeat.wxss */
+.repeat {
+  width: 28rpx;
+  height: 28rpx;
+}

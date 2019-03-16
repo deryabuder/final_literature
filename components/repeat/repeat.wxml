@@ -1,0 +1,2 @@
+<!--components/repeat/repeat.wxml-->
+<image class="repeat" src="./images/分享@2x.png" bindtap="onRepeat"></image>

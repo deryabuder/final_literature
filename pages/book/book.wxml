@@ -1,0 +1,19 @@
+<!--pages/book/book.wxml-->
+<view wx:if="{{!searching}}">
+  <view class="search" bindtap="onSearching">
+    <image class="search-icon" src="/images/book/search.png"></image>
+    <!--禁用之后，就不会出现因为键盘弹起，而导致两个input重叠的尴尬了-->
+    <input class="search-input" disabled placeholder="{{placeholder}}" value="{{value}}"></input>
+  </view>
+  <view class="book-quality-list">
+    <view class="book-quality">
+      <image class="book-quality-img" src="/images/book/quality.png"></image>
+    </view>
+    <view class="book-list-container">
+      <view wx:for="{{hotList}}" class="book-list" wx:key="{{item.id}}">
+        <cmp-book bookItem="{{item}}" hiddenLike="{{false}}"></cmp-book>
+      </view>
+    </view>
+  </view>
+</view>
+<cmp-search hotKeyWord="{{hotKeyWord}}" wx:if="{{searching}}" bindcancel="onCancel"></cmp-search>

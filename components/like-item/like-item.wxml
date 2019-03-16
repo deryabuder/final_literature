@@ -1,0 +1,13 @@
+<!--components/like-item/like-item.wxml-->
+<view class="like-item-container" bindtap="onToDetail">
+  <view class="like-item-info">
+    <text class="like-item-type">{{favorItem.type==100?"电影" : favorItem.type==200?"音乐":"句子"}}</text>
+    <cmp-heart class="like-item-count" isLike="{{favorItem.like_status}}" count="{{favorItem.fav_nums}}" read-only="{{true}}"></cmp-heart>
+  </view>
+  <view class="like-img-wrapper">
+    <image class="like-item-img {{favorItem.type==200 ? 'music': ''}}" src="{{favorItem.image}}"></image>
+  </view>
+  <view class="like-item-des">
+    <text>{{favorItem.content}}</text>
+  </view>
+</view>

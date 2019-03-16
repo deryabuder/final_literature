@@ -1,0 +1,6 @@
+<!--components/popular-img/movie/movie.wxml-->
+<image class="popular-img" src="{{currentItem.image}}"></image>
+<image class="popular-type" src="./images/movie@tag.png"></image>
+<view class="popular-sentence">
+  <text>{{currentItem.content}}</text>
+</view>

@@ -1,0 +1,94 @@
+/* components/search/search.wxss */
+.search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 30rpx;
+  height: 108rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  /* 设置光标的颜色 */
+  caret-color: #00ff62;
+  color: #000;
+}
+.search-icon {
+  position: absolute;
+  height: 28rpx;
+  width: 28rpx;
+  top: 50%;
+  left: 20rpx;
+  transform: translateY(-50%);
+}
+.search-input {
+  flex: 1;
+  text-align: left;
+  padding-left: 60rpx;
+  font-size: 14px;
+  color: #999;
+  height: 70rpx;
+  background-color: #f7f7f7;
+  border-radius: 40rpx;
+}
+.cancel {
+  z-index: 2;
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: -40rpx;
+}
+.cancel-text {
+  position: relative;
+  padding-left: 40rpx;
+  font-size: 14px;
+  color: #666;
+}
+.cancel-text::before {
+  position: absolute;
+  content: '';
+  left: -10rpx;
+  right: -10rpx;
+  top: -10rpx;
+  bottom: -10rpx;
+}
+.search-suggest {
+  padding: 20rpx;
+  font-size: 14px;
+  background-color: #fff;
+}
+.search-info {
+  padding: 30rpx 0;
+}
+.title {
+  display: flex;
+  align-items: baseline;
+}
+.line {
+  width: 10rpx;
+  height: 12px;
+  margin-right: 10rpx;
+  background: #000;
+}
+.title-content {
+  height: 14px;
+  line-height: 14px;
+}
+.search-history .search-hot {
+  padding-left: 20rpx;
+}
+.search-history text, .search-hot text {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  background-color: #f7f7f7;
+  color: #666;
+  margin: 20rpx 20rpx 0 0;
+  padding: 0 10rpx;
+}
+.book-list-container {
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  padding: 0 50rpx;
+}
+.book-list {
+  padding: 30rpx 60rpx;
+}

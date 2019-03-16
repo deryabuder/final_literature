@@ -1,0 +1,13 @@
+<!--components/popular-content/popular-content.wxml-->
+<view class="popular-content">
+  <view class="popular-info">
+    <cmp-time index="{{currentItem.index}}"></cmp-time>
+    <view>
+      <cmp-heart currentItem="{{currentItem}}" isLike="{{currentItem.like_status}}" count="{{currentItem.fav_nums}}" bindlike="onLike"></cmp-heart>
+      <cmp-repeat class="repeat-container"></cmp-repeat>
+    </view>
+  </view>
+  <cmp-movie wx:if="{{currentItem.type == 100}}" currentItem="{{currentItem}}"></cmp-movie>
+  <cmp-music wx:elif="{{currentItem.type == 200}}" currentItem="{{currentItem}}" src="{{currentItem.url}}" title="{{currentItem.title}}"></cmp-music>
+  <cmp-essay wx:else currentItem="{{currentItem}}"></cmp-essay>
+</view>

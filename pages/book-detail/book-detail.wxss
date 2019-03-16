@@ -1,0 +1,161 @@
+/* pages/book-detail/book-detail.wxss */
+.book-detail {
+  background: #f5f5f5;
+}
+.book-detail-header {
+  background: #fff;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.book-detail-image {
+  width: 204rpx;
+  height: 305rpx;
+  padding-bottom: 20rpx;
+}
+.book-detail-name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: SimHei;
+  padding-bottom: 10rpx;
+}
+.book-detail-author {
+  font-size: 14px;
+  color: #999;
+}
+.section {
+  background-color: #fff;
+  padding: 0 30rpx 20rpx;
+  margin-top: 20rpx;
+}
+.title {
+  height: 84rpx;
+  line-height: 84rpx;
+  font-size: 15px;
+  text-align: center;
+}
+.brief-item {
+  float: left;
+  background: #f7f7f7;
+  margin-right: 16rpx;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+}
+.brief-item-content {
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 12px;
+  color: #666;
+  padding-right: 10rpx;
+}
+.brief-item-count {
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 10px;
+  color: #bbb;
+}
+.brief-content .brief-item:nth-child(1), .comment-label-content .brief-item:nth-child(1){
+  background-color: #FFFADD;
+}
+.brief-content .brief-item:nth-child(2), .comment-label-content .brief-item:nth-child(2){
+  background-color: #EEFAFF;
+}
+.no-brief-item {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+}
+.introduction-content {
+  font-size: 14px;
+  color: #666;
+  line-height: 44rpx;
+  text-indent: 2em;
+}
+.p {
+  text-indent: 2em;
+}
+.info-content {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.info-content-left {
+  display: inline-block;
+  width: 110rpx;
+  color: #999;
+  font-size: 12px;
+}
+.info-content-right {
+  display: inline-block;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #666;
+  font-size: 12px 
+}
+.input-comment {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90rpx;
+  margin: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+.input-comment input {
+  height: 56rpx;
+  border: 1px solid #000;
+  border-radius: 30rpx;
+  font-size: 12px;
+  color: #000;
+  width: 400rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.write-comment {
+  height: 24rpx;
+  width: 24rpx;
+}
+.comment-right cmp-heart{
+  padding: 0 60rpx;
+}
+.comment-label-container {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.comment-label {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+}
+.comment-label-header {
+  height: 100rpx;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #f5f5f5;
+  padding: 0 30rpx;
+}
+.comment-label-header .title-left {
+  color: #999;
+}
+.comment-label-content {
+  padding: 30rpx;
+}
+.post {
+  width: 100%;
+  height: 70rpx;
+  background: #eee;
+  border-radius: 20rpx;
+  font-size: 14px;
+  padding-left: 10rpx;
+}

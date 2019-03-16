@@ -1,0 +1,63 @@
+/* components/popular-img/music/music.wxss */
+
+.popular-img-wrapper {
+  position: relative;
+  text-align: center;
+  height: 500rpx;
+  width: 750rpx;
+}
+
+.popular-img {
+  width: 440rpx;
+  height: 440rpx;
+  margin-top: 60rpx;
+  border-radius: 50%;
+}
+
+.popular-type {
+  margin-left: 30rpx;
+  margin-top: -60rpx;
+  width: 46rpx;
+  height: 142rpx;
+}
+
+.playing, .waitting {
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  left: 50%;
+  top: 280rpx;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes musicAnimation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 开始动画 */
+.start {
+  animation: musicAnimation 15s linear infinite backwards;
+}
+/* 暂停动画，不需要这个类，不然每次重新播放动画都是延续上一次的的节点继续播放 */
+/* .stop {
+  animation: musicAnimation paused;
+} */
+.popular-sentence {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0 80rpx;
+  color: #0f0f0f;
+  font-size: 17px;
+  line-height: 30px;
+  height: 60px;
+}
+/* 要实现文本单行居中，多行最后一行不居中的效果。 */
+.popular-sentence text {
+  max-width: 550rpx;
+}

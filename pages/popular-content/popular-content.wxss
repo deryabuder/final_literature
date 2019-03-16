@@ -1,0 +1,14 @@
+/* components/popular-content/popular-content.wxss */
+.popular-content {
+  position: relative;
+}
+.popular-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 100rpx;
+}
+.repeat-container {
+  padding-left: 40rpx;
+}

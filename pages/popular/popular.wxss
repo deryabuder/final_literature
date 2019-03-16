@@ -1,0 +1,24 @@
+/* pages/popular/popular.wxss */
+.popular-content {
+  /* 注意不能设置position:relative, 这样navi就可以相对于窗口布局了 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popular-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+.repeat-container {
+  padding-left: 40rpx;
+}
+.navi {
+  /* 内层固定了窗口底部，外层通过flex让其水平居中 */
+  position: absolute;
+  bottom: 40rpx;
+}

@@ -1,0 +1,7 @@
+<!--components/navi/navi.wxml-->
+<!-- 切换展示页面 -->
+<view class="change-container">
+  <image class="prev" src="{{isLatest?'/images/popular/triangle.dis@left.png':'/images/popular/triangle@left.png'}}" bindtap='onNext'></image>
+  <text class="current-item">{{title}}</text>
+  <image class="next" src="{{isFirst?'/images/popular/triangle.dis@right.png':'/images/popular/triangle@right.png'}}" bindtap='onPrev'></image>
+</view>

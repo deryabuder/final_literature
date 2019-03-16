@@ -1,0 +1,12 @@
+<!--components/book.wxml-->
+<view class="book-item" bindtap="onToDetial">
+  <image class="book-image" src="{{bookItem.image}}"></image>
+  <view class="book-bottom">
+    <text class="book-info-name">{{bookItem.title}}</text>
+    <text class="book-info-author">{{bookItem.author}}</text>
+    <view class="book-like" wx:if="{{!hiddenLike}}">
+      <text class="book-like-count">{{bookItem.fav_nums}}</text>
+      <text class="book-like-text">喜欢</text>
+    </view>
+  </view>
+</view>

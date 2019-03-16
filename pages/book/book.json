@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cmp-book": "/components/book/book",
+    "cmp-search": "/components/search/search"
+  }
+}

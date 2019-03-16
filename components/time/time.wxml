@@ -1,0 +1,12 @@
+<!--components/time/time.wxml-->
+<view class='container'>
+<view class="time-container">
+  <text class="stage">No.</text>
+  <text class="stage-number">{{_index}}</text>
+  <view class="line"></view>
+</view>
+<view class="current-time">
+  <text class="current-month">{{currentMonth}}月</text>
+  <text class="current-year">{{currentYear}}</text>
+</view>
+</view>

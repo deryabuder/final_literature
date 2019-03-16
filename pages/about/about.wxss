@@ -1,0 +1,84 @@
+/* pages/about/about.wxss */
+.about-background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 1219rpx;
+}
+.about-top {
+  position: fixed;
+  width: 150rpx;
+  margin-top: 100rpx;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+.about-head-circle {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  border: 1px solid #fff;
+}
+.about-head {
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+  border-radius: 75rpx;
+  /* 必须加这句 */
+  overflow: hidden;
+}
+.about-head-info {
+  font-size: 14px;
+  /* 消除字体上下无意义的空白 */
+  line-height: 14px;
+  width: 24rpx;
+  /* 允许长的内容可以自动换行 */
+  word-wrap: break-word;
+  padding-top: 40rpx;
+  padding-left: 88rpx;
+}
+.about-head-img {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.about-right {
+  position: fixed;
+  right: 50rpx;
+  bottom: 400rpx;
+  width: 190rpx;
+  height: 70rpx;
+}
+.about-bottom {
+  position: fixed;
+  left: 20rpx;
+  bottom: 50rpx;
+  color: #fff;
+}
+.about-info1 {
+  font-size: 12px;
+}
+.about-info2 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  padding: 6rpx 0;
+}
+.about-line {
+  height: 1px;
+  width: 540rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.about-vertical-line {
+  display: inline-block;
+  margin-right: 10rpx;
+  width: 4px;
+  height: 12px;
+  background: #fff;
+}
+.about-info3 {
+  font-size: 14px;
+  padding-top: 10rpx;
+}

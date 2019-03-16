@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "cmp-heart": "/components/heart/heart",
+    "cmp-time": "/components/time/time",
+    "cmp-repeat": "/components/repeat/repeat",
+    "cmp-essay": "/components/popular-img/essay/essay",
+    "cmp-movie": "/components/popular-img/movie/movie",
+    "cmp-music": "/components/popular-img/music/music",
+    "cmp-navi": "/components/navi/navi"
+  }
+}

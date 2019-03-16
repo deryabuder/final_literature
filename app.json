@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/popular/popular",
+    "pages/book/book",
+    "pages/book-detail/book-detail",
+    "pages/my/my",
+    "pages/course/course",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "旧岛小样",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#c7c7c7",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/popular/popular",
+        "text": "流行",
+        "iconPath": "images/tab/popular.png",
+        "selectedIconPath": "images/tab/popular@highlight.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "书单",
+        "iconPath": "images/tab/book.png",
+        "selectedIconPath": "images/tab/book@highlight.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tab/my.png",
+        "selectedIconPath": "images/tab/my@highlight.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": ["audio"]
+}

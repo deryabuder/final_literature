@@ -1,0 +1,29 @@
+/* components/navi/navi.wxss */
+.change-container {
+  width: 590rpx;
+  height: 80rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.prev, .next {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+}
+.prev::before, .next::after {
+  position: absolute;
+  content: '';
+  left: -10rpx;
+  right: -10rpx;
+  top: -10rpx;
+  bottom: -10rpx;
+}
+.current-item {
+  display: inline-block;
+  font-size: 12px;
+  height: 34rpx;
+  line-height: 34rpx;
+}

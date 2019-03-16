@@ -1,0 +1,36 @@
+<image class="about-background" src="/images/about/background.png"></image>
+<view class="about-top">
+  <view class="about-head-circle">
+    <view class="about-head">
+      <image class="about-head-img" src="/images/about/head.jpg"></image>
+    </view>
+  </view>
+  <!-- text想要用&nbsp;显示空格，必须加 decode="{{true}}" -->
+  <view class="about-head-info">
+    <text decode="{{true}}" class="info-english">Created&nbsp;By&nbsp;  </text>
+    <text decode="{{true}}">&nbsp;七月&nbsp; / &nbsp;设计&nbsp;木齐</text>
+  </view>
+</view>
+<view>
+  <image src=""></image>
+</view>
+ <navigator class="nav" target="miniProgram" app-id="wx8ffc97ad5bcccc89" open-type="navigate">
+  <image class="about-right" src="/images/about/snacks.png"></image>
+</navigator>
+<view class="about-bottom">
+  <view class="about-info1">
+    <text>关注微信公众号</text>
+  </view>
+  <view class="about-info2">
+    <text>林间有风</text>
+  </view>
+  <view class="about-line"></view>
+  <view class="about-info3">
+    <view class="about-vertical-line"></view>
+    <text>欢迎开发者通过微信公众号向作者反馈BUG</text>
+  </view>
+  <view class="about-info3">
+    <view class="about-vertical-line"></view>
+    <text>由于本项目仅作为案例演示，不承诺保留用户相关数据</text>
+  </view>
+</view>

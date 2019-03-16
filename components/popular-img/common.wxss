@@ -1,0 +1,24 @@
+/* components/popular-img/essay/essay.wxss */
+.popular-img {
+  width: 750rpx;
+  height: 500rpx;
+}
+.popular-type {
+  margin-left: 30rpx;
+  margin-top: -70rpx;
+  width: 46rpx;
+  height: 142rpx;
+}
+.popular-sentence {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0 80rpx;
+  color: #0f0f0f;
+  font-size: 17px;
+  line-height: 30px;
+  height: 60px;
+}
+/* 要实现文本单行居中，多行最后一行不居中的效果。 */
+.popular-sentence text {
+  max-width: 550rpx;
+}
