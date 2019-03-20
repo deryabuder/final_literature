@@ -9,10 +9,12 @@ class HTTP {
         "appkey": appKey,
         "content-type": "application/json",
       },
+      // 就因为这里没写，导致post请求一直缺少参数，因此一直报错
+      data: params.data,
       method: params.method,
       success(res) {
         var statusCode = res.statusCode.toString()
-        // console.log(res.data)
+        console.log(res.data)
         if (statusCode.startsWith('2')) {
           params.success && params.success(res.data)
         } else {

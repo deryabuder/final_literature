@@ -24,10 +24,9 @@ Component({
    */
   methods: {
     onToDetail(e) {
-      this.triggerEvent('tap', {
-        id: this.properties.favorItem.id,
-        type: this.properties.favorItem.type
-      }, {})
+      wx.navigateTo({
+        url: '/pages/popular-content/popular-content?id=' + this.data.favorItem.id + '&type=' + this.data.favorItem.type
+      })
     }
   }
 })

@@ -4,6 +4,7 @@
     "pages/book/book",
     "pages/book-detail/book-detail",
     "pages/my/my",
+    "pages/popular-content/popular-content",
     "pages/course/course",
     "pages/about/about"
   ],

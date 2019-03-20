@@ -30,7 +30,7 @@
   </view>
   <view class="my-like-list">
     <view wx:for="{{favor}}" wx:key="favor.id" class="cmp-like-item">
-      <cmp-like-item bindtap="onToDetail" favorItem="{{item}}"></cmp-like-item>
+      <cmp-like-item favorItem="{{item}}"></cmp-like-item>
     </view>
   </view>
 </view>

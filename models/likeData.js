@@ -9,10 +9,10 @@ class LikeModel extends HTTP {
     let url = like_or_cancel == 'cancel' ? '/like/cancel' : '/like'
     var params = {
       url: url,
-      method: 'POST',
+      method: "POST",
       data: {
-        art_id: id,
-        type: type
+        "art_id": id,
+        "type": type
       },
       success: (data) => {
         console.log(data)

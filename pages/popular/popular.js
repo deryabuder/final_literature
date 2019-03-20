@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentItem: {},
+    currentItem: null,
     isFirst: false,
     isLatest: true,
     isLike: false,
@@ -21,6 +21,12 @@ Page({
   onLoad: function(options) {
     // 获取数据是异步的，因此后面没有接收到数据
     this.getLatest()
+  },
+  onShow() {
+    // 资源请求是异步的，防止第一次加载资源，资源还没返回就更新喜欢状态报错的情况
+    if(this.data.currentItem) {
+      this._getLikeStatus(this.data.currentItem.id, this.data.currentItem.type)
+    }
   },
   getLatest() {
     popularModel.getLatest(res => {

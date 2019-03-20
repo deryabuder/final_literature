@@ -15,8 +15,12 @@ Page({
     favor: [],
     myBooks: 0
   },
-  onLoad: function(options) {
+  // 这里不能使用onLoad()生命周期函数，不然在like-item的详情页改变like的状态将不会同步到my页面上。
+  // 页面显示/切入前台时触发。
+  onLoad() {
     this.userAuthenticate()
+  },
+  onShow: function(options) {
     this.getFavor()
     this.getMyBooks()
   },
@@ -82,11 +86,6 @@ Page({
   onToAbout() {
     wx.navigateTo({
       url: '/pages/about/about',
-    })
-  },
-  onToDetail(e) {
-    wx.navigateTo({
-      url: '/pages/popular-content/popular-content?id=' + e.detail.id + '&type=' + e.detail.type
     })
   }
 })
