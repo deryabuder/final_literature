@@ -1,33 +1,40 @@
 <!--components/search/search.wxml-->
-<view class="search">
-  <image class="search-icon" src="./images/search.png"></image>
-  <!--自动聚焦-->
-  <input class="search-input" auto-focus placeholder="{{placeholder}}" value="{{value}}" bindconfirm="onConfirm"></input>
-  <image class="cancel" src="./images/cancel.png" bindtap="onDelete"></image>
-  <text class="cancel-text" bindtap="onCancel">取消</text>
-</view>
-<view class="search-suggest" wx:if="{{!isShowResult}}">
-  <view class="search-info" wx:if="{{searchHistory.length!==0}}">
-    <view class="title">
-      <view class="line"></view>
-      <text class="title-content">历史搜索</text>
+<view class="container">
+  <view class="search">
+    <image class="search-icon" src="./images/search.png"></image>
+    <!--自动聚焦-->
+      <view class="search-input-container">
+        <input class="search-input" auto-focus placeholder="{{placeholder}}" value="{{value}}" bindconfirm="onConfirm"></input>
+        <image class="cancel" src="./images/cancel.png" catchtap="onDelete"></image>
+      </view>
+    <text class="cancel-text" bindtap="onCancel">取消</text>
+  </view>
+  <view class="search-suggest" wx:if="{{!isShowResult}}">
+    <view class="search-info" wx:if="{{searchHistory.length!==0}}">
+      <view class="title">
+        <view class="line"></view>
+        <text class="title-content">历史搜索</text>
+      </view>
+      <view class="search-history">
+        <text wx:for="{{searchHistory}}" data-keyword="{{item}}" wx:key="{{index}}" bindtap="onSearch">{{item}}</text>
+      </view>
     </view>
-    <view class="search-history">
-      <text wx:for="{{searchHistory}}" wx:key="{{index}}" bindtap="onSearch">{{item}}</text>
+    <view class="search-info">
+      <view class="title">
+        <view class="line"></view>
+        <text class="title-content">热门搜索</text>
+      </view>
+      <view class="search-hot">
+        <text wx:for="{{hotKeyWord}}" data-keyword="{{item}}" wx:key="{{index}}" bindtap="onSearch">{{item}}</text>
+      </view>
     </view>
   </view>
-  <view class="search-info">
-    <view class="title">
-      <view class="line"></view>
-      <text class="title-content">热门搜索</text>
-    </view>
-    <view class="search-hot">
-      <text wx:for="{{hotKeyWord}}" wx:key="{{index}}" bindtap="onSearch">{{item}}</text>
+  <view class="book-list-container" wx:if="{{isShowResult}}">
+    <view wx:for="{{searchResult}}" class="book-list" wx:key="{{index}}">
+      <cmp-book bookItem="{{item}}" hiddenLike="{{true}}"></cmp-book>
     </view>
   </view>
-</view>
-<view class="book-list-container" wx:if="{{isShowResult}}">
-  <view wx:for="{{searchResult}}" class="book-list" wx:key="{{index}}">
-    <cmp-book bookItem="{{item}}" hiddenLike="{{true}}"></cmp-book>
-  </view>
+  <cmp-loading class="loading-center" wx:if="{{loadingCenter}}" />
+  <cmp-loading class="loading-bottom" wx:if="{{loading}}" />
+  <text class="empty-tip" wx:if="{{empty}}">没有搜索到书籍</text>
 </view>

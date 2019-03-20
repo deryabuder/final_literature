@@ -3,9 +3,11 @@ class LikeModel extends HTTP {
   constructor() {
     super()
   }
+  // 提交喜欢的状态
   like(like_or_cancel, id, type) {
-    let url = like_or_cancel === 'cancel' ? '/like/cancel' : '/like'
-    this.request({
+    console.log(like_or_cancel, id, type)
+    let url = like_or_cancel == 'cancel' ? '/like/cancel' : '/like'
+    var params = {
       url: url,
       method: 'POST',
       data: {
@@ -15,20 +17,24 @@ class LikeModel extends HTTP {
       success: (data) => {
         console.log(data)
       }
-    })
+    }
+    this.request(params)
   }
-  isFirst(index) {
-    return index <= 1 ? true : false
+  // 获取期刊喜欢的状态
+  getClassicLikeStatus(cid, type, success) {
+    var params = {
+      url: '/classic/' + type + '/' + cid + '/favor',
+      success: success
+    }
+    this.request(params)
   }
-  isLatest(index) {
-    let latestIndex = this._getLatestIndex()
-    return index >= latestIndex ? true : false
-  }
-  _setLatestIndex(index) {
-    wx.setStorageSync('latest', index)
-  }
-  _getLatestIndex() {
-    return wx.getStorageSync('latest')
+  // 获取书籍的点赞情况
+  getBookFavor(index, success) {
+    var params = {
+      url: '/book/' + index + '/favor',
+      success: success
+    }
+    this.request(params)
   }
 }
 module.exports = LikeModel

@@ -3,7 +3,7 @@
   <view class="popular-info">
     <cmp-time index="{{currentItem.index}}"></cmp-time>
     <view>
-      <cmp-heart currentItem="{{currentItem}}" isLike="{{currentItem.like_status}}" count="{{currentItem.fav_nums}}" bindlike="onLike"></cmp-heart>
+      <cmp-heart currentItem="{{currentItem}}" isLike="{{isLike}}" count="{{count}}" bindlike="onLike"></cmp-heart>
       <cmp-repeat class="repeat-container"></cmp-repeat>
     </view>
   </view>

@@ -26,14 +26,19 @@
   text-align: center;
 }
 .button {
-  font-size: 14px;
-  background: #fff;
-}
-.userinfo-avatar {
-  display: block;
   width: 150rpx;
   height: 150rpx;
-  border-radius: 75rpx; 
+  border-radius: 75rpx;
+  line-height: 150rpx;
+  padding: 0;
+  font-size: 16px;
+  background: #eee;
+}
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+  display: block;
 }
 .userinfo-nickname {
   display: block;

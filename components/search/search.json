@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "cmp-book": "/components/book/book"
+    "cmp-book": "/components/book/book",
+    "cmp-loading": "/components/loading/loading"
   }
 }

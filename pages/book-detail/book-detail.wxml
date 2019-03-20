@@ -71,7 +71,7 @@
 <view class="comment-label-container" wx:if="{{isFocus}}">
   <view class="comment-label">
     <view class="comment-label-header">
-      <text class="title-left" wx:if="{{comments.length!==0}}">仅可点击标签+1</text>
+      <text class="title-left" wx:if="{{comments.length!==0}}">点击标签</text>
       <text class="title-left" wx:if="{{comments.length===0}}">暂无标签</text>
       <text class="title-right" bindtap='onCancel'>取消</text>
     </view>

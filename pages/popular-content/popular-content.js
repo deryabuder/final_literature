@@ -16,6 +16,9 @@ Page({
   onLoad(query) {
     var type = query.type
     var id = query.id
+    this.getSpecific(type, id)
+  },
+  getSpecific(type, id) {
     popularModel.getSpecific(type, id, (res) => {
       this.setData({
         currentItem: res,
@@ -36,7 +39,6 @@ Page({
     var likeOrCancel = e.detail.isLike ? 'like' : 'cancel'
     var id = this.data.id
     var type = this.data.type
-    console.log(likeOrCancel, id, type)
     likeModel.like(likeOrCancel, id, type)
   }
 })

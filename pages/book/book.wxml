@@ -16,4 +16,4 @@
     </view>
   </view>
 </view>
-<cmp-search hotKeyWord="{{hotKeyWord}}" wx:if="{{searching}}" bindcancel="onCancel"></cmp-search>
+<cmp-search more="{{more}}" wx:if="{{searching}}" bindcancel="onCancel"></cmp-search>

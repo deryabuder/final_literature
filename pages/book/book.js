@@ -1,20 +1,22 @@
 // pages/book/book.js
 var BookModel = require('../../models/bookData.js')
 var bookModel = new BookModel()
+var random = require('../../utils/util.js')
 Page({
   data: {
     hotList: [],
-    hotKeyWord: [],
     searching: false,
     placeholder: "搜索书籍",
+    more: false
   },
   onLoad(options) {
-    var that = this
-    bookModel.getHotList(function(res) {
-      that.setData({hotList: res})
-    })
-    bookModel.getHotKeyWord(function(res) {
-      that.setData({hotKeyWord: res.hot})
+    this.getHotList()
+  },
+  getHotList() {
+    bookModel.getHotList(res => {
+      this.setData({
+        hotList: res
+      })
     })
   },
   onSearching() {
@@ -25,6 +27,11 @@ Page({
   onCancel() {
     this.setData({
       searching: false
+    })
+  },
+  onReachBottom(event) {
+    this.setData({
+      more: random(16)
     })
   }
 })

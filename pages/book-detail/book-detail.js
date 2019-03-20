@@ -23,18 +23,29 @@ Page({
      *  因为请求数据是异步的，因此对请求数据的操作就在函数内部操作，
      *  如果写在外面，会在数据没有返回的时候操作数据。
      */
-    bookModel.getBookDetail(options.index, (res) => {
+    this.getBookDetail(options.index)
+    this.getBookFavor(options.index)
+    this.getBookComment(options.index)
+
+  },
+  getBookDetail(index) {
+    bookModel.getBookDetail(index, (res) => {
       this.setData({
         bookDetail: res,
         summary: res.summary
       })
     })
-    bookModel.getBookFavor(options.index, (res) => {
+  },
+  // 获取书籍的点赞情况
+  getBookFavor(index) {
+    likeModel.getBookFavor(index, (res) => {
       this.setData({
         favor: res
       })
     })
-    bookModel.getBookComment(options.index, (res) => {
+  },
+  getBookComment(index) {
+    bookModel.getBookComment(index, (res) => {
       this.setData({
         comments: res.comments
       })
@@ -53,10 +64,10 @@ Page({
   },
   onAddComment(e) {
     var content = e.target.dataset.content || e.detail.value
-    if(content > 12) {
+    if (content > 12) {
       wx.showToast({
         title: '短评不能超过12个字',
-        icon: 'icon'
+        icon: 'none'
       })
     } else {
       var comment = {
@@ -74,7 +85,7 @@ Page({
   },
   onLike(e) {
     var likeOrCancel = e.detail.isLike ? 'like' : 'cancel'
-    var id = this.data.id
+    var id = this.data.bookDetail.id
     likeModel.like(likeOrCancel, id, 400)
   }
 })

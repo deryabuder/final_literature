@@ -9,26 +9,26 @@ Page({
    */
   data: {
     currentItem: {},
-    index: 1,
-    id: 0,
-    type: 100,
     isFirst: false,
-    isLatest: true
+    isLatest: true,
+    isLike: false,
+    count: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this
     // 获取数据是异步的，因此后面没有接收到数据
-    popularModel.getLatest(function(res) {
-      likeModel._setLatestIndex(res.index)
-      that.setData({
+    this.getLatest()
+  },
+  getLatest() {
+    popularModel.getLatest(res => {
+      this._getLikeStatus(res.id, res.type)
+      this.setData({
         currentItem: res,
-        index: res.index,
-        id: res.id,
-        type: res.type
+        isFirst: popularModel.isFirst(res.index),
+        isLatest: popularModel.isLatest(res.index)
       })
     })
   },
@@ -36,46 +36,37 @@ Page({
     this.audioCtx = wx.createAudioContext('musicAudio')
   },
   onNext() {
-    var that = this
-    var index = that.data.currentItem.index
-    this.setData({
-      isFirst: likeModel.isFirst(index + 1),
-      isLatest: likeModel.isLatest(index + 1)
-    })
-    if (!likeModel.isLatest(index)) {
-      popularModel.getNext(index, function(res) {
-        that.setData({
-          currentItem: res,
-          id: res.id,
-          type: res.type,
-          index: index + 1
-        })
+    var index = this.data.currentItem.index
+    popularModel.getNext(index, res => {
+      this._getLikeStatus(res.id, res.type)
+      this.setData({
+        currentItem: res,
+        isFirst: popularModel.isFirst(res.index),
+        isLatest: popularModel.isLatest(res.index)
       })
-    }
+    })
   },
   onPrev() {
-    var that = this
-    var index = that.data.currentItem.index
-    this.setData({
-      isFirst: likeModel.isFirst(index - 1),
-      isLatest: likeModel.isLatest(index - 1)
-    })
-    if (!likeModel.isFirst(index)) {
-      popularModel.getPrevious(index, function(res) {
-        that.setData({
-          currentItem: res,
-          id: res.id,
-          type: res.type,
-          index: index - 1
-        })
+    var index = this.data.currentItem.index
+    popularModel.getPrevious(index, res => {
+      this._getLikeStatus(res.id, res.type)
+      this.setData({
+        currentItem: res,
+        isFirst: popularModel.isFirst(res.index),
+        isLatest: popularModel.isLatest(res.index)
       })
-    }
+    })
   },
   onLike(e) {
     var likeOrCancel = e.detail.isLike ? 'like' : 'cancel'
-    var id = this.data.id
-    var type = this.data.type
-    console.log(likeOrCancel, id, type)
-    likeModel.like(likeOrCancel, id, type)
-  }
+    likeModel.like(likeOrCancel, this.data.currentItem.id, this.data.currentItem.type)
+  },
+  _getLikeStatus: function(id, type) {
+    likeModel.getClassicLikeStatus(id, type, (data) => {
+      this.setData({
+        isLike: data.like_status,
+        count: data.fav_nums
+      })
+    })
+  },
 })

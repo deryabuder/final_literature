@@ -13,21 +13,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    count: 0,
-    isLike: 0,
     likeSrc: './images/like.png',
     disLikeSrc: './images/like@dis.png'
-  },
-
-  /**
-   * 自定义组件的生命周期
-   */
-  ready() {
-    // 这里不能获取properties中的变量的属性
-    this.setData({
-      count: this.properties.count,
-      isLike: this.properties.isLike
-    })
   },
 
   /**

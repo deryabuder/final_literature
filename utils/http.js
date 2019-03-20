@@ -12,14 +12,13 @@ class HTTP {
       method: params.method,
       success(res) {
         var statusCode = res.statusCode.toString()
-        console.log(res.data)
+        // console.log(res.data)
         if (statusCode.startsWith('2')) {
           params.success && params.success(res.data)
         } else {
-          wx.showModal({
+          wx.showToast({
             title: '请求资源失败',
-            confirmText: '确定',
-            showCancel: false
+            icon: 'none'
           })
         }
       },

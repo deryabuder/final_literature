@@ -4,7 +4,7 @@
     <image class="my-bg" src="/images/my/my@bg.png"></image>
     <image class="my-study" src="/images/my/study.png" bindtap="onToCourse"></image>
     <view class="userinfo">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="button">获取头像昵称</button>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="button">Click Me</button>
       <block wx:else>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -18,7 +18,7 @@
     </view>
     <view class="my-like">
       <view class="my-like-count">
-        <text>259</text>
+        <text>{{myBooks}}</text>
       </view>
       <view>
         <text>喜欢的书</text>

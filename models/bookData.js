@@ -10,23 +10,9 @@ class BookModel extends HTTP {
     }
     this.request(params)
   }
-  getHotKeyWord(success) {
-    var params = {
-      url: '/book/hot_keyword',
-      success: success
-    }
-    this.request(params)
-  }
   getBookDetail(index, success) {
     var params = {
       url: '/book/' + index + '/detail',
-      success: success
-    }
-    this.request(params)
-  }
-  getBookFavor(index, success) {
-    var params = {
-      url: '/book/' + index + '/favor',
       success: success
     }
     this.request(params)
@@ -49,9 +35,19 @@ class BookModel extends HTTP {
     }
     this.request(params)
   }
-  getSearchResult(q, success) {
+  // 获取搜索结果
+  getSearchResult(start, q, success, fail) {
     var params = {
-      url: '/book/search?q=' + q,
+      url: '/book/search?summary=1&start=' + start + '&q=' + q,
+      success: success,
+      fail: fail
+    }
+    this.request(params)
+  }
+  // 获取我喜欢的书籍的数目
+  getMyBooks(success) {
+    var params = {
+      url: '/book/favor/count',
       success: success
     }
     this.request(params)
